@@ -1,0 +1,26 @@
+﻿<ion-view view-title="Tags">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Tags</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+        <ion-content padding="true" class="has-header">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Tags</span>
+                    <textarea name="tag" type="text" placeholder="Insira aqui algumas tags para que seu perfil tenha ainda mais Visibilidade. Ex: #Surfista#Praia#RostoFino" ng-model="candidato.TextoTags" style="height:200px"
+                    ng-class="{ 'has-error' : userForm.tag.$invalid && !userForm.tag.$pristine }"
+                    ng-maxlength="30" ng-minlength="2">
+                              </textarea>
+                </label>
+            <p ng-show="userForm.tag.$error.maxlength" class="help-block">Tag deve conter até 30 caracteres.</p>
+            <p ng-show="userForm.tag.$error.minlength" class="help-block">Tag deve conter no minimo 2 caracteres.</p>
+
+
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+            </form>
+</ion-view>

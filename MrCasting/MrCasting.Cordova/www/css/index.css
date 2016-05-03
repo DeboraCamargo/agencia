@@ -1,0 +1,89 @@
+﻿body {
+}
+
+.logo-branco-texto-direta {
+    background-image: url(../images/mr-casting_branco_direita.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: auto;
+}
+
+.fundo-amarelo {
+    background-image: url('../images/fundo1.png');
+    background-repeat: repeat;
+}
+
+.inicio-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url('../images/fundo1.png');
+    background-repeat: repeat;
+}
+
+.inicio-scroll {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bar .button-bar > .button, .bar .buttons > .button {
+    height: 40px;
+    line-height: 32px;
+    top:-15px;
+
+   
+}
+.negrito{
+    font-weight:bold;
+}
+
+/*image-caroussel*/
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 100px;
+}
+ 
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+ 
+.transparent {
+    background-color: rgba(0, 0, 0, .5);
+    /*background: transparent !important;*/
+}
+ 
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+ 
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.custom-icon {
+  font-size: 27px;
+  color : red;
+}
+
+.custom-menu{
+/*color : red;*/
+font-weight:bold;
+}
+
+
+
+
+

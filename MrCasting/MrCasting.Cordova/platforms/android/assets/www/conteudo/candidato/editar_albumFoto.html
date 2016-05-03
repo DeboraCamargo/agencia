@@ -1,0 +1,25 @@
+﻿<ion-view title="Album fotos">
+    <ion-header-bar align-title="center">
+        <img src="./images/mr-casting_colorido_baixo.png" style="width:auto;height:100%;padding-left:10px" />
+        <h1 class="title">Fotos</h1>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <canvas id="canvasFoto" style="width: 50%;display:none"></canvas>
+
+            <button class="button button-full  button-dark" ng-click="selecionarFoto()">
+                Selecionar foto
+            </button>
+
+            <a class="item item-list-detail">
+                <ion-scroll direction="x">
+                    <img ng-repeat="foto in albumFotos" ng-src="{{foto.Foto}}" ng-click="showImages($index)" class="image-list-thumb" />
+                </ion-scroll>
+            </a>
+
+            <!--<ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+                <img ng-repeat="foto in albumFotos" ng-src="{{foto.Foto}}" style="height:200px; padding: 5px 5px 5px 5px;" />
+            </ion-scroll>-->
+        </form>
+    </ion-content>
+</ion-view>

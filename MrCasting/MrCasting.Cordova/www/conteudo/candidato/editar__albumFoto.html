@@ -1,0 +1,21 @@
+﻿<ion-view title="Album fotos">
+    <ion-header-bar align-title="center">
+        <img src="./images/mr-casting_colorido_baixo.png" style="width:auto;height:100%;padding-left:10px" />
+        <h1 class="title">Fotos</h1>
+    </ion-header-bar>
+        <ion-content padding="true" class="has-header">
+    <form class="list">
+            <button class="button button-full button-energized" ng-click="addMedia()">
+                Add image
+            </button>
+        <button class="button button-full button-energized" ng-click="getPicture()">
+            Get Pic
+        </button>
+        <img ng-src="{{imagem.src}}" alt="{{imagem.valor}}"/>
+            <br><br>
+            <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+                <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;" />
+            </ion-scroll>
+        </form>
+        </ion-content>
+</ion-view>

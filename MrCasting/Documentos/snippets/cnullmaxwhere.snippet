@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Compara Nullable maior ou igual e adiciona numa clausula Where do linq</Title>
+			<Shortcut>cnullmaxwhere</Shortcut>
+			<Description>Bloco para comparar valor maximo de um nullable e adicionar em um where</Description>
+			<Author>AleDebby Corp</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>variavel1</ID>
+					<ToolTip>Variavel de comparação 1</ToolTip>
+					<Default>myV2</Default>
+				</Literal>
+				<Literal>
+					<ID>variavel2</ID>
+					<ToolTip>Variavel de comparação 2</ToolTip>
+					<Default>myV2</Default>
+				</Literal>
+				<Literal>
+					<ID>variavel_where</ID>
+					<ToolTip>IQueryable que sera feito o where</ToolTip>
+					<Default>myWhere</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+    <![CDATA[	
+  if ($variavel1$.HasValue)
+  {
+    $variavel_where$= $variavel_where$.Where(x => x.$variavel2$.HasValue && x.$variavel2$.Value <= $variavel1$.Value);
+  }
+
+	$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

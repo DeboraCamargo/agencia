@@ -1,0 +1,22 @@
+﻿<ion-view title="Candidato">
+    <ion-header-bar align-title="center">
+        <img src="./images/mr-casting_colorido_baixo.png" style="width:auto;height:100%;padding-left:10px" />
+        <h1 class="title">Interesses</h1>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <h4>Escolha qual seu interesse:</h4>
+            <div class="card" ng-repeat="interesse in interesses">
+                <a class="icon-left ion-information-circled custom-icon" ng-click="openPopover($event, interesse.id)"></a>
+                <ion-radio  ng-model="opcao.valor" ng-value="interesse.id">{{interesse.nome}}</ion-radio>
+            </div>
+
+        </form>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <button class="button button-dark button-block icon-left ion-chevron-left" ng-click="anterior()">Voltar</button>
+            <button class="button button-dark button-block " ng-click="gravar()">Concluir</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

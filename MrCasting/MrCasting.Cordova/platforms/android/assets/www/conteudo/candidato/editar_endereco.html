@@ -1,0 +1,110 @@
+﻿<ion-view view-title="Endereço">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Endereco</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <ion-content padding="true" class="has-header">
+
+            <label class="item item-input item-select">
+                <span class="input-label">Estado</span>
+                <select name="uf" ng-model="candidato.DadosPessoais.Endereco.Uf" required
+                        ng-class="{ 'has-error' : userForm.uf.$invalid && !userForm.uf.$pristine }">
+                    <option value="1">Acre</option>
+                    <option value="26">São Paulo</option>
+                    <option value="2">Alagoas</option>
+                    <option value="3">Amapá</option>
+                    <option value="4">Amazonas</option>
+                    <option value="5">Bahia</option>
+                    <option value="6">Ceará</option>
+                    <option value="7">Distrito Federal</option>
+                    <option value="8">Espírito Santo</option>
+                    <option value="9">Goiás</option>
+                    <option value="10">Maranhão</option>
+                    <option value="11">Mato Grosso</option>
+                    <option value="12">Mato Grosso do Sul</option>
+                    <option value="13">Minas Gerais</option>
+                    <option value="14">Paraná</option>
+                    <option value="15">Paraíba</option>
+                    <option value="16">Pará</option>
+                    <option value="17">Pernambuco</option>
+                    <option value="18">Piauí</option>
+                    <option value="19">Rio de Janeiro</option>
+                    <option value="20">Rio Grande do Norte</option>
+                    <option value="21">Rio Grande do Sul</option>
+                    <option value="22">Rondônia</option>
+                    <option value="23">Roraima</option>
+                    <option value="24">Santa Catarina</option>
+                    <option value="25">Sergipe</option>
+                    <option value="27">Tocantins</option>
+                    <!--<option ng-repeat="estado in estados" value="{{estado.id}}">{{estado.text}}</option>-->
+                </select>
+            </label>
+            <div role="alert">
+                <span class="error" ng-show="userForm.uf.$error.required">
+                    Estado é obrigatório
+                </span>
+            </div>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Cidade</span>
+                <input name="cidade" type="text" placeholder="ex. São Paulo" ng-model="candidato.DadosPessoais.Endereco.Cidade" required
+                       ng-class="{ 'has-error' : userForm.cidade.$invalid && !userForm.cidade.$pristine }"
+                       ng-maxlength="80">
+            </label>
+            <p ng-show="userForm.cidade.$error.maxlength" class="help-block">Cidade deve conter até 80 caracteres.</p>
+            <div role="alert">
+                <span class="error" ng-show="userForm.cidade.$error.required">
+                    Cidade é obrigatório
+                </span>
+            </div>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Bairro</span>
+                <input name="bairro" type="text" placeholder="ex. Guaianazes" ng-model="candidato.DadosPessoais.Endereco.Bairro" 
+                       ng-class="{ 'has-error' : userForm.bairro.$invalid && !userForm.bairro.$pristine }"
+                       ng-maxlength="150">
+            </label>
+            <p ng-show="userForm.bairro.$error.maxlength" class="help-block">Bairro deve conter até 150 caracteres.</p>
+
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Logradouro</span>
+                <input name="logradouro" type="text" placeholder="Avenida, rua, rodovia..." ng-model="candidato.DadosPessoais.Endereco.Logradouro" ng-class="{ 'has-error' : userForm.logradouro.$invalid && !userForm.logradouro.$pristine }"
+                       ng-maxlength="80">
+            </label>
+            <p ng-show="userForm.logradouro.$error.maxlength" class="help-block">Logradouro deve conter até 80 caracteres.</p>
+
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Numero</span>
+                <input name="numero" type="text" placeholder="ex. 36 fundos" ng-model="candidato.DadosPessoais.Endereco.Numero"
+                       ng-class="{ 'has-error' : userForm.numero.$invalid && !userForm.numero.$pristine }"
+                       ng-maxlength="20">
+            </label>
+            <p ng-show="userForm.numero.$error.maxlength" class="help-block">Número deve conter até 20 caracteres.</p>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Cep</span>
+                <input name="cep" type="text" placeholder="ex. 08450-311" ng-model="candidato.DadosPessoais.Endereco.Cep" 
+                       ng-class="{ 'has-error' : userForm.cep.$invalid && !userForm.cep.$pristine }"
+                       ng-maxlength="9" ng-minlength="8">
+            </label>
+            <p ng-show="userForm.cep.$error.maxlength" class="help-block">Cep deve conter até 9 digitos</p>
+            <p ng-show="userForm.cep.$error.minlength" class="help-block">Cep deve conter pelo menos 8 digitos</p>
+
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Complemento</span>
+                <input  name="complemento"  type="text" placeholder="ex. Apartamento e Bloco" ng-model="candidato.DadosPessoais.Endereco.Complemento" ng-class="{ 'has-error' : userForm.complemento.$invalid && !userForm.complemento.$pristine }"
+                       ng-maxlength="100">
+            </label>
+            <p ng-show="userForm.complemento.$error.maxlength" class="help-block">Complemento deve conter até 100 digitos</p>
+
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+</ion-view>

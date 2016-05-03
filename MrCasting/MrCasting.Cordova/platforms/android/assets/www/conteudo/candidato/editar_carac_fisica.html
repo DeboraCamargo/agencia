@@ -1,0 +1,239 @@
+﻿<ion-view view-title="Caracteristiscas Fisicas">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Caracteristicas Fisicas</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <ion-content padding="true" class="has-header">
+            <div>
+                <div class="list list-inset">
+
+                    <label class="item item-input item-select">
+                        <span class="input-label"><b>Cor Olhos</b></span>
+                        <select ng-model="candidato.CaracteristicaFisica.CorOlhos">
+                            <option selected value="Castanho">Castanho</option>
+                            <option value="Castanho Claro">Castanho Claro</option>
+                            <option value="Castanho Escuro">Castanho Escuro</option>
+                            <option value="Verde">Verde</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Cinza">Cinza</option>
+                            <option value="Preto">Preto</option>
+                            <option value="Mel">Mel</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label"><b>Cor Pele</b></span>
+                        <select ng-model="candidato.CaracteristicaFisica.CorPele">
+                            <option selected value="Negro">Negro(a)</option>
+                            <option value="Branco">Branco(a)</option>
+                            <option value="Amarelo">Amarelo(a)</option>
+                            <option value="Pardo">Pardo(a)</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label"><b>Comprimento Cabelo</b></span>
+                        <select ng-model="candidato.CaracteristicaFisica.ComprimentoCabelo">
+                            <option selected value="Longo">Longo</option>
+                            <option value="Ombro">Ombro</option>
+                            <option value="Curto">Curto</option>
+                            <option value="Cintura">Cintura</option>
+                            <option value="Medio">Medio</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label"><b>Tipo Cabelo</b></span>
+                        <select ng-model="candidato.CaracteristicaFisica.TipoCabelo">
+                            <option selected value="Encaracolado">Encaracolado</option>
+                            <option value="Liso">Liso</option>
+                            <option value="Crespo">Crespo</option>
+                            <option value="Enrolado">Enrolado</option>
+                            <option value="Loiro">Loiro</option>
+                            <option value="Ruivo">Ruivo</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label"><b>Tipo Fisico</b></span>
+                        <select ng-model="candidato.CaracteristicaFisica.TipoFisico">
+                            <option selected value="Magro">Magro</option>
+                            <option value="MuitoMagro">Muito Magro</option>
+                            <option value="Atleta">Atleta</option>
+                            <option value="AcimaPeso">Acima do Peso</option>
+                            <option value="Obeso">Obeso</option>
+                            <option value="Fisiculturista">Fisiculturista</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Manequim</b></span>
+                        <input type="number" name="manequim" min="5" max="100" placeholder="Ex. 46" ng-model="candidato.CaracteristicaFisica.Manequim" ng-pattern="/^[0-9]+(\.[0-9]{0,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.manequim.$error.max" class="help-block">Tamanho máximo de 100.</p>
+                    <p ng-show="userForm.manequim.$error.min" class="help-block">Tamanho mínimo de 5.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.manequim.$error.number">
+                            Não é um número válido
+                        </span>
+
+                        <span class="help-block" ng-show="!userForm.manequim.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Sapato</b></span>
+                        <input type="number" name="sapato" min="5" max="70" placeholder="ex. 36" ng-model="candidato.CaracteristicaFisica.Sapato" ng-pattern="/^[0-9]+(\.[0-9]{0,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.sapato.$error.max" class="help-block">Tamanho máximo de 70.</p>
+                    <p ng-show="userForm.sapato.$error.min" class="help-block">Tamanho mínimo de 5.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.sapato.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.sapato.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Altura</b></span>
+                        <input type="number" name="altura" min="0" max="3" placeholder="Ex 1,65" ng-model="candidato.CaracteristicaFisica.Altura" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">
+                    </label>
+                    <p ng-show="userForm.altura.$error.max" class="help-block">Tamanho máximo de 3m.</p>
+                    <p ng-show="userForm.altura.$error.min" class="help-block">Altura não pode ser negativa.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.altura.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.altura.$valid">
+                            Máximo de duas casa decimais
+                        </span>
+                    </div>
+
+
+                    <label class="item item-input item-stacked-label" ng-show="candidato.DadosPessoais.Sexo == 1">
+                        <span class="input-label"><b>Cintura (cm)</b></span>
+                        <input type="number" name="cintura" min="0" max="300" placeholder="Medida em Centimetros Ex.: 60" ng-model="candidato.CaracteristicaFisica.Cintura" ng-pattern="/^[0-9]+(\.[0-9]{1,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.cintura.$error.max" class="help-block">Tamanho máximo de 300 centimetros.</p>
+                    <p ng-show="userForm.cintura.$error.min" class="help-block">Cintura não pode ser negativa.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.cintura.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.cintura.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label" ng-show="candidato.DadosPessoais.Sexo == 1">
+                        <span class="input-label"><b>Busto (cm)</b></span>
+                        <input type="number" name="busto" min="0" max="300" placeholder="Medida em Centimetros Ex.: 50" ng-model="candidato.CaracteristicaFisica.Busto" ng-pattern="/^[0-9]+(\.[0-9]{1,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.busto.$error.max" class="help-block">Tamanho máximo de 300 cm.</p>
+                    <p ng-show="userForm.busto.$error.min" class="help-block">Busto não pode ser negativo.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.busto.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.busto.$valid">
+                            Máximo de uma casa decimal
+                       </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Quadril (cm)</b></span>
+                        <input name="quadril" type="number" min="0" max="300" placeholder="Medida em Centimetros Ex.: 70" ng-model="candidato.CaracteristicaFisica.Quadril" ng-pattern="/^[0-9]+(\.[0-9]{1,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.quadril.$error.max" class="help-block">Tamanho máximo de 300 cm.</p>
+                    <p ng-show="userForm.quadril.$error.min" class="help-block">Tamanho não pode ser negativo.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.quadril.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.quadril.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Peso</b></span>
+                        <input name="Peso" type="number" placeholder="Medida em Quilos Ex.: 75,5" ng-model="candidato.CaracteristicaFisica.Peso" min="0" max="200" ng-pattern="/^[0-9]+(\.[0-9]{1,1})?$/" step="0.1">
+                    </label>
+                    <p ng-show="userForm.Peso.$error.max" class="help-block">Tamanho máximo de 200 Quilos.</p>
+                    <p ng-show="userForm.Peso.$error.min" class="help-block">Peso não pode ser  negativo.</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.Peso.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.Peso.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label" ng-show="candidato.DadosPessoais.Sexo == 2">
+                        <span class="input-label"><b>Torax</b></span>
+                        <input name="torax" type="number" min="0" max="300" placeholder="Medida em Centimetros Ex.: 70" ng-model="candidato.CaracteristicaFisica.Torax" class="form-control" ng-pattern="/^[0-9]+(\.[0-9]{1,1})?$/" step="0.1"
+                               ng-class="{ 'has-error' : userForm.torax.$invalid && !userForm.torax.$pristine }">
+                    </label>
+                    <p ng-show="userForm.torax.$error.max" class="help-block">Tamanho máximo de 300 Cm.</p>
+                    <p ng-show="userForm.torax.$error.min" class="help-block">Tamanho não pode ser negativo</p>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.torax.$error.number">
+                            Não é um número válido
+                        </span>
+                        <span class="help-block" ng-show="!userForm.torax.$valid">
+                            Máximo de uma casa decimal
+                        </span>
+                    </div>
+
+                    <label class="item item-input item-stacked-label" ng-show="candidato.DadosPessoais.Sexo == 2">
+                        <span class="input-label"><b>Terno</b></span>
+                        <input name="terno" type="text" placeholder="ex. Pequeno, Médio, Grande" ng-model="candidato.CaracteristicaFisica.Terno"
+                               class="form-control"
+                               ng-minlength="4" ng-maxlength="60" ng-class="{ 'has-error' : userForm.terno.$invalid && !userForm.terno.$pristine }">
+                    </label>
+                    <p ng-show="userForm.terno.$error.minlength" class="help-block">Terno no mínimo 4 caracteres.</p>
+                    <p ng-show="userForm.terno.$error.maxlength" class="help-block">Terno no máximo 60 caracteres.</p>
+
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Camisa</b></span>
+                        <input name="camisa" type="text" placeholder="ex. Pequena, Média, Grande" ng-model="candidato.CaracteristicaFisica.Camisa"
+                               class="form-control"
+                               ng-minlength="2" ng-maxlength="60" ng-class="{ 'has-error' : userForm.camisa.$invalid && !userForm.camisa.$pristine }">
+                    </label>
+                    <p ng-show="userForm.camisa.$error.minlength" class="help-block">Camisa no mínimo 4 caracteres.</p>
+                    <p ng-show="userForm.camisa.$error.maxlength" class="help-block">Camisa no máximo 60 caracteres.</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Etnia</b></span>
+                        <input name="etnia" type="text" placeholder="ex. Afro-Americano" ng-model="candidato.CaracteristicaFisica.Etnia"
+                               class="form-control"
+                               ng-minlength="2" ng-maxlength="30" ng-class="{ 'has-error' : userForm.etnia.$invalid && !userForm.etnia.$pristine }">
+                    </label>
+                    <p ng-show="userForm.etnia.$error.minlength" class="help-block">Etnia no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.etnia.$error.maxlength" class="help-block">Etnia no máximo 30 caracteres.</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label"><b>Descendência</b></span>
+                        <input name="Descendencia" type="text" placeholder="ex. Arabe" ng-model="candidato.CaracteristicaFisica.Descendencia"
+                               class="form-control"
+                               ng-minlength="2" ng-maxlength="60" ng-class="{ 'has-error' : userForm.Descendencia.$invalid && !userForm.Descendencia.$pristine }">
+                    </label>
+                    <p ng-show="userForm.Descendencia.$error.minlength" class="help-block">Descendência no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.Descendencia.$error.maxlength" class="help-block">Descendência no máximo 60 caracteres.</p>
+                    
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+</ion-view>

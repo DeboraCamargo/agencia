@@ -1,0 +1,65 @@
+﻿<ion-view view-title="Candidato">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Candidato</h1>
+    </ion-header-bar>
+
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <ion-content padding="true" class="has-header">
+            <div>
+
+                <div class="list list-inset">
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nome Artistico</span>
+                        <input name="NomeArtisitico" type="text" placeholder="Ex.:Leo" ng-model="candidato.NomeFantasia" 
+                               required ng-class="{ 'has-error' : userForm.NomeArtisitico.$invalid && !userForm.NomeArtisitico.$pristine }">
+                    </label>
+                    <p ng-show="userForm.NomeArtisitico.$invalid && !userForm.NomeArtisitico.$pristine" class="help-block">Seu nome artistico é obrigatório</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">DRT</span>
+                        <input name="DRT" type="text" placeholder="Caso seja modelo" ng-model="candidato.DRT" class="form-control" 
+                               ng-minlength="3" ng-maxlength="10" ng-class="{ 'has-error' : userForm.DRT.$invalid && !userForm.DRT.$pristine }">
+                    </label>
+                    <p ng-show="userForm.DRT.$error.minlength" class="help-block">DRT no mínimo 3 caracteres.</p>
+                    <p ng-show="userForm.DRT.$error.maxlength" class="help-block">DRT no máximo 10 caracteres.</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Profissão</span>
+                        <input name="Profissao"  type="text" placeholder="Ex.:Professor" ng-model="candidato.Profissao"  class="form-control" 
+                               ng-minlength="2" ng-maxlength="60" ng-class="{ 'has-error' : userForm.Profissao.$invalid && !userForm.Profissao.$pristine }">
+                    </label>
+                    <p ng-show="userForm.Profissao.$error.minlength" class="help-block">Profissão no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.Profissao.$error.maxlength" class="help-block">Profissão no máximo 60 caracteres.</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Naturalidade</span>
+                        <input name="Naturalidade" type="text" placeholder="Ex.:Natural de Espinosa-MG" ng-model="candidato.Naturalidade" 
+                               class="form-control" 
+                               ng-minlength="2" ng-maxlength="120" ng-class="{ 'has-error' : userForm.Naturalidade.$invalid && !userForm.Naturalidade.$pristine }">
+                    </label>
+                    <p ng-show="userForm.Naturalidade.$error.minlength" class="help-block">Naturalidade no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.Naturalidade.$error.maxlength" class="help-block">Naturalidade no máximo 120 caracteres.</p>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nacionalidade</span>
+                        <input name="Nacionalidade" type="text" placeholder="Ex.:Brasileiro" ng-model="candidato.Nacionalidade"
+                               class="form-control" 
+                               ng-minlength="2" ng-maxlength="120" ng-class="{ 'has-error' : userForm.Nacionalidade.$invalid && !userForm.Nacionalidade.$pristine }">
+                    </label>
+                    <p ng-show="userForm.Nacionalidade.$error.minlength" class="help-block">Nacionalidade no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.Nacionalidade.$error.maxlength" class="help-block">Nacionalidade no máximo 120 caracteres.</p>
+
+
+                </div>
+            </div>
+
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+
+</ion-view>

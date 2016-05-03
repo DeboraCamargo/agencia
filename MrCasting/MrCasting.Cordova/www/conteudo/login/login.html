@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center">
+        <h1 class="title">Login</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doLogin(loginData)">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Usuario</span>
+                    <input type="text" ng-model="loginData.usuario" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Senha</span>
+                    <input type="password" ng-model="loginData.senha" />
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Log in</button>
+
+                </label>
+            </div>
+            <div>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                </fb:login-button>
+            <a class="button button-light button-positive ion-social-facebook icon-left" ng-click="FBLogin()">&nbsp;Entrar com facebook</a>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

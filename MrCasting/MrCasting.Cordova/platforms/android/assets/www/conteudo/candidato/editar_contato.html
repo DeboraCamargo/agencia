@@ -1,0 +1,57 @@
+﻿<ion-view view-title="Informações de Contato">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Cadastrar</h1>
+    </ion-header-bar>
+
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+        <ion-content padding="true" class="has-header">
+
+            <div>
+
+                <div class="list list-inset">
+                    <label class="item item-input  item-stacked-label">
+                        <span class="input-label">E-mail</span>
+                        <input type="email" name="email" placeholder="Seu@Email.com" ng-model="candidato.DadosPessoais.Contato.Email" required
+                               ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                    </label>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.email.$error.required">
+                            Seu E-mail é Obrigatório
+                        </span>
+                        <span class="error" ng-show="userForm.email.$error.email">
+                            E-mail Inválido
+                        </span>
+                    </div>
+
+
+                    <label class="item item-input  item-stacked-label">
+                        <span class="input-label">Telefone</span>
+                        <input name="telefone" type="tel" placeholder="(11) 98888-3421" ng-model="candidato.DadosPessoais.Contato.Telefone"
+                               class="form-control" ng-minlength="11" ng-maxlength="12" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }" required>
+                    </label>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.telefone.$error.required">
+                            Seu Telefone é Obrigatório
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.number">
+                            Telefone Inválido
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.minlength">
+                            Minimo 11 digitos
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.maxlength">
+                            Maximo 12 digitos
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar>
+            <div class="button-bar">
+                <button class="button button-dark button-block"  ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+        </form>
+</ion-view>

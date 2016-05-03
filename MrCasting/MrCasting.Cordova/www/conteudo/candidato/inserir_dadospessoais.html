@@ -1,0 +1,66 @@
+
+<ion-modal-view title="Dados Pessoais">
+    <ion-header-bar align-title="center">
+        <img src="./images/mr-casting_colorido_baixo.png" style="width:auto;height:100%;padding-left:10px"/>
+        <h1 class="title">Cadastrar</h1>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <div style="text-align:center;width:100%;">
+                <canvas id="canvasFoto" style="width: 50%;display:none"></canvas>
+                <img ng-src="{{foto.src}}" style="width: 50%; height: auto" ng-click="selecionarFoto()" />
+            </div>
+            <div>
+                <h4>Dados pessoais</h4>
+                <div class="list list-inset">
+                    <div class="item item-input item-stacked-label">
+                        <span class="input-label">Nome completo</span>
+                        <input name="nome" type="text" placeholder="Seu nome" ng-model="dadosTelaCandidato.DadosPessoais.Nome" required 
+                               class="form-control" 
+                               ng-minlength="2" ng-maxlength="60" ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">
+                    </div>
+                    <p ng-show="userForm.nome.$error.minlength" class="help-block">Nome no mínimo 2 caracteres.</p>
+                    <p ng-show="userForm.nome.$error.maxlength" class="help-block">Nome no máximo 60 caracteres.</p>
+                    <p ng-show="userForm.nome.$error.required" class="help-block"> Seu nome é obrigatório</p>
+
+                    <div class="item item-input item-stacked-label">
+                        <span class="input-label">Data de nacimento</span>
+                        <input name="nascimento" type="date" ng-model="dadosTelaCandidato.DadosPessoais.DataNascimento" placeholder="yyyy-MM-dd" min="1900-01-01" max="2016-12-31" required  ng-class="{ 'has-error' : userForm.nascimento.$invalid && !userForm.nascimento.$pristine }">
+                    </div>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.nascimento.$error.required">
+                            Data Obrigatória
+                        </span>
+                        <span class="error" ng-show="userForm.nascimento.$error.date">
+                            Não é uma data Válida
+                        </span>
+                        <span class="error" ng-show="userForm.nascimento.$error.min">
+                            Não pode ser inferior a 1900
+                        </span>
+                        <span class="error" ng-show="userForm.nascimento.$error.max">
+                            Não pode ser superior a 2016
+                        </span>
+                    </div>
+
+                    <div class="item item-input item-select">
+                        <span class="input-label">Sexo</span>
+                        <select name="sexo" ng-model="dadosTelaCandidato.DadosPessoais.Sexo" required ng-class="{ 'has-error' : userForm.sexo.$invalid && !userForm.sexo.$pristine }">
+                            <option selected value="1">Feminino</option>
+                            <option value="2">Masculino</option>
+                        </select>
+                    </div>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.sexo.$error.required">
+                            Campo obrigatório
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <button class="button button-dark button-block icon-right ion-chevron-right" ng-disabled="userForm.$invalid" ng-click="proxima()">Avançar</button>
+        </div>
+    </ion-footer-bar>
+</ion-modal-view>

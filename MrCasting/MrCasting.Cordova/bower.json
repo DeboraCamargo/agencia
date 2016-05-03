@@ -1,0 +1,13 @@
+{
+  "name": "MrCasting.Cordova",
+  "dependencies": {
+    "ngCordova": "*",
+    "ionic": "1.0.0",
+    "angular-easyfb": "*",
+    "ng-cordova-oauth": "*",
+    "ngGallery": "*"
+  },
+  "resolutions": {
+    "angular": ">= 1.0.8"
+  }
+}

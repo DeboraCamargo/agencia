@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "MrCasting.Web"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-MrCasting.Web-35ba0492-4711-4178-8397-1077084babf8;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

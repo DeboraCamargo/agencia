@@ -1,0 +1,38 @@
+﻿<ion-view view-title="Conta">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Minha Conta</h1>
+    </ion-header-bar>
+
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+
+            <!--<a class="item item-icon-left" href="#">
+                <i class="icon ion-email"></i>
+                Data de Criação
+            </a>-->
+            <label class="item item-input item-stacked-label" ng-show="candidato.DadosPessoais.DataNascimento">
+                <span class="input-label negrito">Conta ativa desde </span>
+                <span class="input-label">{{candidato.DadosPessoais.DataNascimento | idadeFilter}}</span>
+            </label>
+
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i>
+                Cancelar Conta
+
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i>
+                Termo de Uso
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i>
+                Sobre
+                <!--<span class="badge badge-assertive">0</span>-->
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i>
+                Logout
+            </a>
+        </form>
+    </ion-content>
+</ion-view>

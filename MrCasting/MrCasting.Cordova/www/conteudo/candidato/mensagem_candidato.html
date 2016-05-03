@@ -1,0 +1,24 @@
+﻿<ion-view view-title="Mensagens">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Mensagens</h1>
+    </ion-header-bar>
+    <form class="list">
+
+        <ion-content padding="true" class="has-header">
+
+            <div class="list">
+                <h4>Propostas recebidas</h4>
+                <div class="card" ng-repeat="mensagem in mensagens">
+                    <a class="icon-left ion-information-circled" ng-click="openPopover($event, mensagem.id)"></a>
+                    <ion-radio ng-model="opcao.valor" ng-value="mensagem.id">{{mensagem.titulo}}</ion-radio>
+                </div>
+
+            </div>
+
+        </ion-content>
+
+    </form>
+        <ion-footer-bar>
+            <ion-checkbox ng-model="filter.blue">Red</ion-checkbox>
+        </ion-footer-bar>
+</ion-view>

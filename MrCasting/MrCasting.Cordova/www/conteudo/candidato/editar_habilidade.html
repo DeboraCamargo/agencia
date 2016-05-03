@@ -1,0 +1,42 @@
+﻿<ion-view view-title="Habilidade">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Habilidade</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <ion-content padding="true" class="has-header">
+
+            <div class="list">
+
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input name="habilidade" class="item-input-inset" type="text" placeholder="Adicione suas habilidades" ng-model="txtNovaHabilidade.valor"
+                               ng-class="{ 'has-error' : userForm.habilidade.$invalid && !userForm.habilidade.$pristine }" ng-maxlength="30" ng-minlength="4">
+                    </label>
+
+                    <button class="button button-small button-clear button-dark ion-plus-round " ng-disabled="userForm.$invalid"  ng-click="adiciona()">
+                        Adicionar
+                    </button>
+
+                </div>
+                    <p ng-show="userForm.habilidade.$error.maxlength" class="help-block">Habilidade deve conter até 30 caracteres.</p>
+                    <p ng-show="userForm.habilidade.$error.minlength" class="help-block">Habilidade deve conter no minimo 4 caracteres.</p>
+
+            </div>
+
+            <!--no dto do candidato está escrito habilitade-->
+            <div class="list" ng-repeat="habilidade in candidato.Habilidade">
+                <div class="item item-button-right">
+                    <span>{{habilidade.NomeHabilidade}}</span>
+                    <button class="button button-positive" ng-click="remover(habilidade.Id)">
+                        <i class="icon ion-trash-a"></i>
+                    </button>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+</ion-view>

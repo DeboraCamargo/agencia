@@ -1,0 +1,63 @@
+﻿<ion-view title="Candidato">
+    <ion-header-bar align-title="center">
+        <img src="./images/mr-casting_colorido_baixo.png" style="width:auto;height:100%;padding-left:10px" />
+        <h1 class="title">Cadastrar</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <ion-content padding="true" class="has-header">
+            <div>
+                <h4>Dados artiscos</h4>
+                <div class="list list-inset">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nome artistico</span>
+                        <input name="NomeArtisitico" type="text" placeholder="Seu nome artistico" ng-model="dadosTelaCandidato.NomeArtistico" required ng-class="{ 'has-error' : userForm.NomeArtisitico.$invalid && !userForm.NomeArtisitico.$pristine }">
+                    </label>
+                    <p ng-show="userForm.NomeArtisitico.$invalid && !userForm.NomeArtisitico.$pristine" class="help-block">Seu nome artistico é obrigatório</p>
+                </div>
+            </div>
+            <div>
+                <h4>Contatos</h4>
+                <div class="list list-inset">
+                    <label class="item item-input  item-stacked-label">
+                        <span class="input-label">E-mail</span>
+                        <input name="email" type="email" placeholder="Seu@Email.com" ng-model="dadosTelaCandidato.Contato.Email" required
+                               ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                    </label>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.email.$error.required">
+                            Seu E-mail é Obrigatório
+                        </span>
+                        <span class="error" ng-show="userForm.email.$error.email">
+                            E-mail Inválido
+                        </span>
+                    </div>
+
+                    <label class="item item-input  item-stacked-label">
+                        <span class="input-label">Telefone</span>
+                        <input name="telefone" type="tel" placeholder="(00) 00000-0000" ng-model="dadosTelaCandidato.Contato.Telefone" class="form-control" ng-minlength="11" ng-maxlength="12" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }" required>
+                    </label>
+                    <div role="alert">
+                        <span class="error" ng-show="userForm.telefone.$error.required">
+                            Seu Telefone é Obrigatório
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.number">
+                            Telefone Inválido
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.minlength">
+                            Minimo 11 digitos
+                        </span>
+                        <span class="error" ng-show="userForm.telefone.$error.maxlength">
+                            Maximo 12 digitos
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar>
+            <div class="button-bar">
+                <button class="button button-dark button-block icon-left ion-chevron-left" ng-click="anterior()">Voltar</button>
+                <button class="button button-dark button-block icon-right ion-chevron-right" ng-disabled="userForm.$invalid" ng-click="proxima()">Avançar</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+</ion-view>

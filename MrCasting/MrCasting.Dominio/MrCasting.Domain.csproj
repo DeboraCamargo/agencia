@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AA8F775-A7EC-4FAD-977F-053E2BADF224}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MrCasting.Domain</RootNamespace>
+    <AssemblyName>MrCasting.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\CandidatoDTO.cs" />
+    <Compile Include="DTO\CaracteristicasFisicasDTO.cs" />
+    <Compile Include="DTO\ConsultarFotosDTO.cs" />
+    <Compile Include="DTO\ContaDTO.cs" />
+    <Compile Include="DTO\ContatoDTO.cs" />
+    <Compile Include="DTO\EnderecoDTO.cs" />
+    <Compile Include="DTO\FotoDTO.cs" />
+    <Compile Include="DTO\HabilidadeDTO.cs" />
+    <Compile Include="DTO\HobbyDTO.cs" />
+    <Compile Include="DTO\InteresseDTO.cs" />
+    <Compile Include="DTO\LoginOAuthDTO.cs" />
+    <Compile Include="DTO\PesquisaDadosPessoaisDTO.cs" />
+    <Compile Include="DTO\Pesquisas\PesquisaCandidatoDTO.cs" />
+    <Compile Include="DTO\PessoaDTO.cs" />
+    <Compile Include="DTO\PropostaDTO.cs" />
+    <Compile Include="DTO\ScouterDTO.cs" />
+    <Compile Include="DTO\TagsDTO.cs" />
+    <Compile Include="DTO\VagaDTO.cs" />
+    <Compile Include="DTO\VideoDTO.cs" />
+    <Compile Include="Entities\Candidato.cs" />
+    <Compile Include="Entities\CaracteristicasFisicas.cs" />
+    <Compile Include="Entities\Conta.cs" />
+    <Compile Include="Entities\Contato.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\FotoObj.cs" />
+    <Compile Include="Entities\Habilidade.cs" />
+    <Compile Include="Entities\Hobby.cs" />
+    <Compile Include="Entities\Interesse.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\LoginOAuth.cs" />
+    <Compile Include="Entities\Proposta.cs" />
+    <Compile Include="Entities\Scouter.cs" />
+    <Compile Include="Entities\Vaga.cs" />
+    <Compile Include="Entities\VideoObj.cs" />
+    <Compile Include="Enuns\CorOlhos.cs" />
+    <Compile Include="Enuns\CorPele.cs" />
+    <Compile Include="Enuns\StatusPropostaEnum.cs" />
+    <Compile Include="Enuns\StatusVagaEnum.cs" />
+    <Compile Include="Enuns\TipoConta.cs" />
+    <Compile Include="Enuns\TiposInteresses.cs" />
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Enuns\IdentidadeGenero.cs" />
+    <Compile Include="Enuns\OrientacaoSexual.cs" />
+    <Compile Include="Enuns\Genero.cs" />
+    <Compile Include="Enuns\Uf.cs" />
+    <Compile Include="Exceptions\CandidatoNaoEncontradoException.cs" />
+    <Compile Include="Exceptions\PropostaNaoEncontradaException.cs" />
+    <Compile Include="Exceptions\ScouterNaoEncontradoException.cs" />
+    <Compile Include="Exceptions\UsuarioNaoCadastradoException.cs" />
+    <Compile Include="Exceptions\VagaNaoEncontradaException.cs" />
+    <Compile Include="ExtendionMethods\EntityDTOConverter.cs" />
+    <Compile Include="Interfaces\Application\IAppServiceBase.cs" />
+    <Compile Include="Interfaces\Application\ICaracteristicasFisicasAppService.cs" />
+    <Compile Include="Interfaces\Application\ICandidatoAppService.cs" />
+    <Compile Include="Interfaces\Application\IContaAppService.cs" />
+    <Compile Include="Interfaces\Application\IContatoAppService.cs" />
+    <Compile Include="Interfaces\Application\IEnderecoAppService.cs" />
+    <Compile Include="Interfaces\Application\IFotoAppService.cs" />
+    <Compile Include="Interfaces\Application\IHabilidadeAppService.cs" />
+    <Compile Include="Interfaces\Application\IHobbyAppService.cs" />
+    <Compile Include="Interfaces\Application\IInteresseAppService.cs" />
+    <Compile Include="Interfaces\Application\ILoginOAuthAppService.cs" />
+    <Compile Include="Interfaces\Application\IPessoaAppService.cs" />
+    <Compile Include="Interfaces\Application\IPropostaAppService.cs" />
+    <Compile Include="Interfaces\Application\IScouterAppService.cs" />
+    <Compile Include="Interfaces\Application\ITagsAppService.cs" />
+    <Compile Include="Interfaces\Application\IVagaAppService.cs" />
+    <Compile Include="Interfaces\Application\IVideoAppService.cs" />
+    <Compile Include="Interfaces\Repositories\IContaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IContatoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICandidatoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICaracteristicaFisicaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFotoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IHabilidadeRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IHobbyRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IInteresseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ILoginOAuthRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPessoaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPropostaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IScouterRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITagsRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IVagaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IVideoRepository.cs" />
+    <Compile Include="Interfaces\Services\IContaService.cs" />
+    <Compile Include="Interfaces\Services\IContatoService.cs" />
+    <Compile Include="Interfaces\Services\ICandidatoService.cs" />
+    <Compile Include="Interfaces\Services\ICaracteristicaFisicaService.cs" />
+    <Compile Include="Interfaces\Services\IEnderecoService.cs" />
+    <Compile Include="Interfaces\Services\IFotoService.cs" />
+    <Compile Include="Interfaces\Services\IHabilidadeService.cs" />
+    <Compile Include="Interfaces\Services\IHobbyService.cs" />
+    <Compile Include="Interfaces\Services\IInteresseService.cs" />
+    <Compile Include="Interfaces\Services\ILoginOAuthService.cs" />
+    <Compile Include="Interfaces\Services\IPessoaService.cs" />
+    <Compile Include="Interfaces\Services\IPropostaService.cs" />
+    <Compile Include="Interfaces\Services\IScouterService.cs" />
+    <Compile Include="Interfaces\Services\ITagsService.cs" />
+    <Compile Include="Interfaces\Services\IVagaService.cs" />
+    <Compile Include="Interfaces\Services\IVideoService.cs" />
+    <Compile Include="Services\ContaService.cs" />
+    <Compile Include="Services\ContatoService.cs" />
+    <Compile Include="Services\CaracteristicaFisicaService.cs" />
+    <Compile Include="Services\EnderecoService.cs" />
+    <Compile Include="Services\FotoService.cs" />
+    <Compile Include="Services\HabilidadeService.cs" />
+    <Compile Include="Services\HobbyService.cs" />
+    <Compile Include="Services\InteresseService.cs" />
+    <Compile Include="Services\LoginOAuthService.cs" />
+    <Compile Include="Services\PessoaService.cs" />
+    <Compile Include="Services\PropostaService.cs" />
+    <Compile Include="Services\ScouterService.cs" />
+    <Compile Include="Services\TagsService.cs" />
+    <Compile Include="Services\VagaService.cs" />
+    <Compile Include="Services\VideoService.cs" />
+    <Compile Include="ValueObject\Cep.cs" />
+    <Compile Include="ValueObject\Cpf.cs" />
+    <Compile Include="ValueObject\Email.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="ValueObject\Tags.cs" />
+    <Compile Include="Interfaces\Repositories\IRepository.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Services\CandidatoService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObject\Telefone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MrCasting.Helpers\MrCasting.Helpers.csproj">
+      <Project>{a95a983c-2cd1-4b9a-8655-0d184dd8d036}</Project>
+      <Name>MrCasting.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿<ion-view view-title="Hobby">
+    <ion-header-bar align-title="center">
+        <h1 class="title">Hobby</h1>
+    </ion-header-bar>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+        <ion-content padding="true" class="has-header">
+
+                <div class="list">
+
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input name="hobby" class="item-input-inset" type="text" placeholder="Adicione seus hobbies" ng-model="txtNovoHobby.valor"
+                                   ng-class="{ 'has-error' : userForm.hobby.$invalid && !userForm.hobby.$pristine }"
+                               ng-maxlength="30" ng-minlength="4">
+                        </label>
+
+                        <button class="button button-small button-clear button-dark ion-plus-round " ng-disabled="userForm.$invalid" ng-click="adiciona()">
+                            Adicionar
+                        </button>
+                    </div>
+                        <p ng-show="userForm.hobby.$error.maxlength" class="help-block">Hobby deve conter até 30 caracteres.</p>
+                        <p ng-show="userForm.hobby.$error.minlength" class="help-block">Hobby deve conter no minimo 4 caracteres.</p>
+
+                </div>
+
+                <div class="list" ng-repeat="hobby in candidato.Hobby">
+                    <div class="item item-button-right">
+                        {{hobby.NomeHobby}}
+                        <button class="button button-positive" ng-click="remover(hobby.Id)">
+                            <i class="icon ion-trash-a"></i>
+                        </button>
+                    </div>
+                </div>
+        </ion-content>
+        <ion-footer-bar>
+            <div class=" button-bar">
+                <button class="button button-dark" type="submit" ng-disabled="userForm.$invalid" ng-click="gravar()">Gravar</button>
+            </div>
+        </ion-footer-bar>
+            </form>
+</ion-view>
+
+
+
+
+

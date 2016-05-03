@@ -1,0 +1,83 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <!--<ion-nav-back-button>
+            </ion-nav-back-button>-->
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable" style="">
+            <!--<h1 class="title">MrCasting</h1>-->
+            <img src="./images/mr-casting_sem_preenc.png" style="width:auto;height:100%;padding-left:5%" />
+        </ion-header-bar>
+        <ion-content class="fundo-amarelo custom-menu">
+            <ion-list>
+
+                <ion-item menu-close ng-click="sidemenu('/app/mensagemcandidato')">
+                    <class class="ion-ios-email"> Mensagens</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/perfil')">
+                    <class class=" ion-ios-heart"> Meu Perfil</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/editarCandidato')">
+                    <class class="ion-bowtie"> Candidato</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/editarDadosPessoais')">
+                    <class class="ion-clipboard"> Dados Pessoais</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/endereco')">
+                    <class class="ion-android-globe"> Endereco</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/editarContato')">
+                    <class class="ion-ios-telephone"> Contato</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/realise')">
+                    <class class="ion-compose"> Realise</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/tags')">
+                    <class class="ion-pound"> Tags</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/caracFisica')">
+                    <class class="icon-left ion-android-happy"> Caracteristicas Fisicas</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/hobby')">
+                    <class class="icon-left ion-ios-game-controller-b"> Hobby</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/habilidade')">
+                    <class class="icon-left ion-mic-b"> Habilidade</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/editarAlbumFoto')">
+                    <class class="ion-images"> Album de Fotos</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/editarInteresse')">
+                    <class class="ion-ios-filing"> Interesses</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/contacandidato')">
+                    <class class="icon-left ion-person"> Minha Conta</class>
+                </ion-item>
+
+                <ion-item menu-close ng-click="sidemenu('/app/faleconosco')">
+                    <class class="icon-left ion-ios-home"> Fale conosco</class>
+                </ion-item>
+               
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
